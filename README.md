@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lembretes
+### Nesse projeto é criado uma API simples para criar novos bilhetes e os exibir em formado de Lista:
+![Captura de Tela (37)](https://github.com/GabrielMoraeswolf/loginCompassUOL/assets/58598993/e1e3eb31-fadb-4d97-97f9-581595d817c7)
 
-## Getting Started
+### Tambem é possivel os remover separadamente ao clicar no botão "x":
+![Captura de Tela (38)](https://github.com/GabrielMoraeswolf/loginCompassUOL/assets/58598993/9c2279b9-7217-424b-8934-c06214b0a178)
+![Captura de Tela (39)](https://github.com/GabrielMoraeswolf/loginCompassUOL/assets/58598993/4712c8a8-1fe9-4c78-879b-e0a972fe42dd)
 
-First, run the development server:
+### Há algumas validações feitas como estar no formato (dd/mm/yyyy), passar datas validas e posteriores há data atual.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Como Rodar:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+pode-se baixar o projeto e executar o comando:
+* npm run dev
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ou via Web pelo link:
+* https://lembretes-gamma.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Technologies Used:
 
-To learn more about Next.js, take a look at the following resources:
+<table>
+  <tr>
+    <td>Next.js</td>
+    <td>Typescript</td>
+    <td>Node.js</td>
+    
+  </tr>
+</table>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Authors:
+* Gabriel Rodrigues de Moraes

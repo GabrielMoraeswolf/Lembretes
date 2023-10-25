@@ -1,3 +1,4 @@
+"use client";
 import { Lembrete } from "./lembrete";
   
   interface LembretesListProps {
@@ -50,4 +51,3 @@ import { Lembrete } from "./lembrete";
   };
   
   export default LembretesList;
-  

@@ -5,5 +5,9 @@
     justify-content: center;
     min-height: 100vh;
     margin: 0 10%;
-    background-color: #f0f0f0;
+    background-color: #CCC8AA;
+  }
+  .main{
+    background-color:#F1EFEF;
+ 
   }

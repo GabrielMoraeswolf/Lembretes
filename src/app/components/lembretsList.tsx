@@ -1,6 +1,7 @@
 "use client";
 import { Lembrete } from "./lembrete";
-  
+import styles from './LembretesList.module.css';
+
   interface LembretesListProps {
     lembretes: Lembrete[];
     onLembreteRemovido: (lembrete: Lembrete) => void;
@@ -10,6 +11,18 @@ import { Lembrete } from "./lembrete";
     lembretes,
     onLembreteRemovido,
   }) => {
+    // Função para classificar os lembretes por data
+  const sortLembretesByDate = (lembretes: Lembrete[]) => {
+    return lembretes.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return dateA - dateB;
+    });
+  };
+
+  const sortedLembretes = sortLembretesByDate(lembretes);
+
+
     // Função para agrupar lembretes por data
     const groupLembretesByDate = () => {
       const groupedLembretes: { [data: string]: Lembrete[] } = {};
@@ -27,19 +40,20 @@ import { Lembrete } from "./lembrete";
     const groupedLembretes = groupLembretesByDate();
   
     return (
-      <div>
-        <h2>Lista de Lembretes</h2>
+      <div className={styles['list-container']}>
+        <h2 className={styles['list-header']}>Lista de Lembretes</h2>
         {Object.keys(groupedLembretes).map((data) => (
           <div key={data}>
-            <h3>Lembretes para {data}</h3>
+            <h3 className={styles['date-header']}>Lembretes para {data}</h3>
             <ul>
-              {groupedLembretes[data].map((lembrete, index) => (
-                <li key={index}>
+              {groupedLembretes[data].map((lembrete) => (
+                <li key={lembrete.name} className={styles.item}>
                   {lembrete.name}
                   <button
                     onClick={() => onLembreteRemovido(lembrete)}
+                    className={styles['remove-button']}
                   >
-                    Remover
+                    X
                   </button>
                 </li>
               ))}

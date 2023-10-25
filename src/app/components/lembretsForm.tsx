@@ -13,24 +13,48 @@ const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
   const [erro, setErro] = useState("");
 
   const criarLembrete = () => {
-    if (!name || !date) {
+    const dataAtual = new Date();
+    if (!name || !date) {//campos não vazios 
       setErro("Por favor, preencha todos os campos corretamente.");
     } else {
-      onLembreteCriado({ name, date });
-      setName("");
-      setDate("");
-      setErro("");
+      const datePattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;//formatação adequada 
+      if (!date.match(datePattern)) {
+        setErro("Formato de data inválido. Use dd/mm/yyyy.");
+        return;
+      }
+      const dataString = date;
+      const partes = dataString.split("/"); // Divida a string em partes
+      const dia = parseInt(partes[0], 10); 
+      const mes = parseInt(partes[1], 10); 
+      const ano = parseInt(partes[2], 10);
+      const dataInserida = new Date(ano, mes, dia);
+      
+      if(dia>=1 && dia<=31 && mes>=1 && mes<=12 ){//verificação de data  
+        if (dataInserida > dataAtual) {// A data inserida está no futuro
+          onLembreteCriado({ name: name, date: date });
+          setName("");
+          setDate("");
+          setErro("");
+        } else {
+          setErro("ERROR! A data inserida já passou.");
+          return;
+        }
+      }
+      else{
+        setErro("Formato de data inválido. Use dd/mm/yyyy.");
+        return;
+      }
     }
   };
-
   return (
     <div >
-      <h2>Criar Lembrete</h2>
+      <h2>Novo Lembrete</h2>
       <div className={styles.label}>
         <label className={styles.labelNome}>Nome </label>
         <input
           type="text"
           value={name}
+          placeholder="Nome do lembrete"
           onChange={(e) => setName(e.target.value)}
           className={styles.input}
         />
@@ -40,6 +64,7 @@ const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
         <input
           type="text"
           value={date}
+          placeholder="Data do lembrete"
           onChange={(e) => setDate(e.target.value)}
           className={styles.input}
         />

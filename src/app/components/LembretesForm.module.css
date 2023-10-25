@@ -1,6 +1,4 @@
 
-
-  
   .label {
     display: flex;
     flex-direction: row;
@@ -11,7 +9,7 @@
     margin-top: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #A1A1A1;
+    background-color: #7D7C7C;
     
   }
   .labelNome {

@@ -36,7 +36,7 @@ const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
           setDate("");
           setErro("");
         } else {
-          setErro("ERROR! A data inserida já passou.");
+          setErro("ERROR! É necessário preencher com uma data posterior a data atual.");
           return;
         }
       }
@@ -47,14 +47,14 @@ const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
     }
   };
   return (
-    <div >
-      <h2>Novo Lembrete</h2>
+    <div className={styles['new-lembrete-container']}>
+      <h2 className={styles['labelTitule']}>&nbsp; Novo Lembrete</h2>
       <div className={styles.label}>
         <label className={styles.labelNome}>Nome </label>
         <input
           type="text"
           value={name}
-          placeholder="Nome do lembrete"
+          placeholder=" Nome do lembrete"
           onChange={(e) => setName(e.target.value)}
           className={styles.input}
         />

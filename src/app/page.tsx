@@ -4,6 +4,7 @@ import LembretesForm from "./components/lembretsForm";
 import LembretesList from "./components/lembretsList";
 import styles from './page.module.css';
 
+
 const Home: React.FC = () => {
   const [lembretes, setLembretes] = useState<{ name: string; date: string }[]>([]);
 
@@ -15,10 +16,9 @@ const Home: React.FC = () => {
     const filteredLembretes = lembretes.filter((l) => l.name !== lembrete.name || l.date !== lembrete.date);
     setLembretes(filteredLembretes);
   };
-  
+
   return (
-    <div>
-      <main className={styles.main}>
+      <main >
         <div className={styles.container}> 
           <LembretesForm onLembreteCriado={handleLembreteCriado} />
           <LembretesList
@@ -27,7 +27,6 @@ const Home: React.FC = () => {
           />
         </div>
       </main>
-    </div>
   );
 };
 

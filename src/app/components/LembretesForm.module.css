@@ -1,15 +1,28 @@
-
+.new-lembrete-container {
+  border: 1px solid #fafafa;
+  border-radius: 15px;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #00A9FF;
+}
+.labelTitule{
+  border: 1px solid #fafafa;
+  border-radius: 10px;
+  align-items: center;
+  color: #fafafa;
+  background-color: #190482;
+}
   .label {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: #333;
+    color: #fafafa;
     margin-top: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #7D7C7C;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    background-color: #89CFF3;
     
   }
   .labelNome {
@@ -21,24 +34,24 @@
     width: 100%;
     padding: 0.25rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #e8e8e8;
     border-radius: 4px;
     margin-left: 0.25rem;
     box-shadow: none;
   }
   
   .button {
-    background-color: #007bff;
+    background-color: #190482;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     cursor: pointer;
   }
   
   .error-message {
-    color: red;
+    color: #192655;
     margin-top: 0.5rem;
   }
   

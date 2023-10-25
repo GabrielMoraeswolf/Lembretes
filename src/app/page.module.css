@@ -4,10 +4,6 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0 10%;
-    background-color: #CCC8AA;
+    background-image: url('../../public/wallpaper-azul.jpg');
   }
-  .main{
-    background-color:#F1EFEF;
- 
-  }
+  

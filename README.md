@@ -1,5 +1,5 @@
 # Lembretes
-### Nesse projeto é criado uma API simples para criar novos bilhetes e os exibir em formado de Lista:
+### Nesse projeto é criado uma API simples para criar novos bilhetes e os exibir em formato de Lista:
 ![Captura de Tela (37)](https://github.com/GabrielMoraeswolf/loginCompassUOL/assets/58598993/e1e3eb31-fadb-4d97-97f9-581595d817c7)
 
 ### Tambem é possivel os remover separadamente ao clicar no botão "x":

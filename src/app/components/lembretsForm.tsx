@@ -4,10 +4,10 @@ import { Lembrete } from "./lembrete";
 import styles from './LembretesForm.module.css';
 
 interface LembretesFormProps {
-  onLembreteCriado: (lembrete: Lembrete) => void;
+  _LembreteCriado: (lembrete: Lembrete) => void;
 }
 
-const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
+const LembretesForm: React.FC<LembretesFormProps> = ({ _LembreteCriado }) => {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [erro, setErro] = useState("");
@@ -31,12 +31,12 @@ const LembretesForm: React.FC<LembretesFormProps> = ({ onLembreteCriado }) => {
       
       if(dia>=1 && dia<=31 && mes>=1 && mes<=12 ){//verificação de data  
         if (dataInserida > dataAtual) {// A data inserida está no futuro
-          onLembreteCriado({ name: name, date: date });
+          _LembreteCriado({ name: name, date: date });
           setName("");
           setDate("");
           setErro("");
         } else {
-          setErro("ERROR! É necessário preencher com uma data posterior a data atual.");
+          setErro("ERRO! É necessário preencher com uma data posterior a data atual.");
           return;
         }
       }
